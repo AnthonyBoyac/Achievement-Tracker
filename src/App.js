@@ -2,6 +2,7 @@ import './App.css';
 import React, { useEffect } from 'react';
 import configData from './config.json';
 function App() {
+  // store all games the user has with achievements enabled
   var allGames = {};
   useEffect(() => {
     // fetch('IPlayerService/GetOwnedGames/v1/?key=' + configData.apiKey + '&steamid=' + confidData.steamid + '&include_appinfo=true&include_played_free_games=true&appids_filter=0')
