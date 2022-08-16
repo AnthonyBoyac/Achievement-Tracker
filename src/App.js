@@ -1,9 +1,9 @@
 import './App.css';
 import React, { useEffect } from 'react';
 import configData from './config.json';
-function App() {
+const App = ({achievementName}) => {
   // store all games the user has with achievements enabled
-  var allGames = {};
+  // var allGames = {};
   useEffect(() => {
     // used for each game component - links to game's guide
     // 'https://steamcommunity.com/app/' + <appid> + '/guides/'
@@ -23,7 +23,7 @@ function App() {
     //   });
   }, []
   );
-
+console.log(achievementName)
 var textTest = 'ma maaaan';
   return (
     <div className="App">
