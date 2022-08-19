@@ -1,8 +1,8 @@
 .game {
   max-width: 1000px;
   min-width: 600px;
-  height: 200px;
-  margin: auto;
+  height: 300px;
+  margin: 1.5em auto;
   background: lightblue;
   text-align: center;
 }
