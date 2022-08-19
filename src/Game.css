@@ -1,0 +1,8 @@
+.game {
+  max-width: 1000px;
+  min-width: 600px;
+  height: 200px;
+  margin: auto;
+  background: lightblue;
+  text-align: center;
+}
