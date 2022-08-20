@@ -4,5 +4,9 @@
   height: 300px;
   margin: 1.5em auto;
   background: lightblue;
-  text-align: center;
+}
+.game_achievement {
+  width: 50px;
+  height: 50px;
+  background: lightcoral;
 }
