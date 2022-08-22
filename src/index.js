@@ -22,7 +22,6 @@ function fetchGames() {
       })
       if ((res.response.games.length - 1) === index) {
         console.log("fetch achievements call")
-        console.log(gameList)
         fetchAchievements();
       }
     })
@@ -35,21 +34,19 @@ function fetchAchievements() {
     .then(res => res.json())
     .then(res => {
       game.achievements = res.game.availableGameStats.achievements
+      if ((gameList.length - 1) === index ) {
+        console.log("fetch completed achievements call")
+        fetchCompletedAchievements();
+      }
     })
-    if ((gameList.length - 1) === index ) {
-      console.log("fetch completed achievements call")
-      console.log(gameList)
-      fetchCompletedAchievements();
-    }
   })
 }
 
 function fetchCompletedAchievements() {
   gameList.forEach((game, index) => {
-    console.log(game.achievements.length)
-    if (game.achievements.length === 0) {
-      // do nothing
-    } else {
+    console.log(game.gameName);
+    console.log(game.achievements.length);
+    if (game.achievements.length > 0) {
       fetch('ISteamUserStats/GetPlayerAchievements/v0001/?appid=' + game.id + '&key=' + configData.apiKey + '&steamid=' + configData.steamId)
       .then(res => res.json())
       .then(res => {
