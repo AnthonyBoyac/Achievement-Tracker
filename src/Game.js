@@ -14,14 +14,15 @@ const Game = (props) => {
               </div>
               )
             })
+
             return (
               <div className="game" key={game.id}>
-                Name: {game.name}
+                Name: {game.gameName}
                 {displayAchievements}
               </div>
             );
           } catch (error) {
-            console.log("gone too far")
+            console.log(error)
           }
 
         })
