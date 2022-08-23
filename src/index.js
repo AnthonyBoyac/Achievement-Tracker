@@ -21,7 +21,7 @@ function fetchGames() {
         achievements: []
       })
       if ((res.response.games.length - 1) === index) {
-        console.log("fetch achievements call")
+        console.log("fetch achievements")
         fetchAchievements();
       }
     })
@@ -44,15 +44,15 @@ function fetchAchievements() {
 
 function fetchCompletedAchievements() {
   gameList.forEach((game, index) => {
-    console.log(game.gameName);
-    console.log(game.achievements.length);
-    if (game.achievements.length > 0) {
+    console.log(game.gameName)
+    if (game.achievements.length > 0 || game.achievements.length !== "undefined") {
       fetch('ISteamUserStats/GetPlayerAchievements/v0001/?appid=' + game.id + '&key=' + configData.apiKey + '&steamid=' + configData.steamId)
       .then(res => res.json())
       .then(res => {
           game.achievements.forEach((achievement, index) => {
             achievement.achieved = res.playerstats.achievements[index].achieved
           })
+          // TODO: fix this shit
           if (index === (gameList.length - 1)) {
             console.log("rendering component")
             renderComponent();
